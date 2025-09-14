@@ -65,7 +65,7 @@ export default function App() {
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ duration: 1 }}
-        className="text-5xl md:text-7xl font-bold text-center text-purple-400 drop-shadow-2xl mb-4"
+        className="text-5xl md:text-7xl font-bold text-center text-purple-400 drop-shadow-2xl m-4"
       >
         It's Me 🧿💖✨
       </motion.h1>
