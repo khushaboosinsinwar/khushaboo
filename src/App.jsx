@@ -71,7 +71,7 @@ export default function App() {
       </motion.h1>
 
       {/* 🖼️ 3D Rotating Image Ring */}
-      <div className="relative w-[600px] h-[550px] perspective">
+      <div className="relative w-[700px] h-[550px] perspective">
         <div className="absolute inset-0 animate-spin-slow preserve-3d">
           {images.map((src, i) => {
             const angle = (360 / images.length) * i;
