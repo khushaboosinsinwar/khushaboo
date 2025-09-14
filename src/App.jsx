@@ -65,13 +65,13 @@ export default function App() {
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ duration: 1 }}
-        className="text-5xl md:text-7xl font-bold text-center text-purple-400 drop-shadow-2xl m-4"
+        className="text-5xl md:text-7xl font-bold text-center text-purple-400 drop-shadow-2xl mb-4"
       >
         It's Me 🧿💖✨
       </motion.h1>
 
       {/* 🖼️ 3D Rotating Image Ring */}
-      <div className="relative w-[700px] h-[550px] perspective">
+      <div className="relative w-[600px] h-[550px] perspective">
         <div className="absolute inset-0 animate-spin-slow preserve-3d">
           {images.map((src, i) => {
             const angle = (360 / images.length) * i;
