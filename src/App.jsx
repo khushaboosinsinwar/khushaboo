@@ -19,7 +19,7 @@ import img10 from "./assets/img10.jpg";
 import img11 from "./assets/img11.jpg";
 import imag5 from "./assets/imag5.jpg";
 
-const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, imag5,img10,img11];
+const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, imag5, img10, img11];
 
 export default function App() {
   const [emojis, setEmojis] = useState([]);
@@ -42,7 +42,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-r from-purple-900 via-black to-purple-700 text-white flex flex-col items-center justify-center overflow-hidden px-4">
+    <div className="relative min-h-screen bg-gradient-to-r from-purple-900 via-black to-purple-700 text-white flex flex-col items-center justify-center overflow-hidden px-2 sm:px-4">
       {/* 🎆 Confetti */}
       <Confetti width={window.innerWidth} height={window.innerHeight} />
 
@@ -53,7 +53,7 @@ export default function App() {
           initial={{ y: "100vh", opacity: 0 }}
           animate={{ y: "-10vh", opacity: 1 }}
           transition={{ duration: 6, ease: "easeOut" }}
-          className="absolute text-3xl"
+          className="absolute text-2xl sm:text-3xl"
           style={{ left: `${item.left}%` }}
         >
           {item.emoji}
@@ -65,28 +65,28 @@ export default function App() {
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ duration: 1 }}
-        className="text-5xl md:text-7xl font-bold text-center text-purple-400 drop-shadow-2xl mb-4"
+        className="text-3xl sm:text-5xl md:text-7xl font-bold text-center text-purple-400 drop-shadow-2xl mb-4"
       >
         It's Me 🧿💖✨
       </motion.h1>
 
       {/* 🖼️ 3D Rotating Image Ring */}
-      <div className="relative w-[700px] h-[550px] perspective">
+      <div className="relative w-[90vw] sm:w-[600px] h-[300px] sm:h-[450px] perspective mb-10">
         <div className="absolute inset-0 animate-spin-slow preserve-3d">
           {images.map((src, i) => {
             const angle = (360 / images.length) * i;
             return (
               <div
                 key={i}
-                className="absolute w-40 h-56 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+                className="absolute w-24 h-32 sm:w-40 sm:h-56 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                 style={{
-                  transform: `rotateY(${angle}deg) translateZ(250px)`,
+                  transform: `rotateY(${angle}deg) translateZ(200px)`,
                 }}
               >
                 <img
                   src={src}
                   alt={`img-${i}`}
-                  className="w-full h-full object-cover rounded-xl border-4 border-pink-300 shadow-xl"
+                  className="w-full h-full object-cover rounded-xl border-2 sm:border-4 border-pink-300 shadow-xl"
                 />
               </div>
             );
@@ -99,7 +99,7 @@ export default function App() {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1 }}
-        className="relative mb-16 w-80 md:w-[450px] rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(192,132,252,0.7)] border-4 border-purple-400"
+        className="relative mb-10 w-[90vw] sm:w-80 md:w-[450px] rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(192,132,252,0.7)] border-2 sm:border-4 border-purple-400"
       >
         <video
           src={birthdayVideo}
@@ -112,10 +112,10 @@ export default function App() {
       </motion.div>
 
       {/* 🌟 NEW Masonry Image Gallery */}
-      <h2 className="text-3xl md:text-4xl font-bold text-pink-300 mb-6">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-pink-300 mb-6">
         My Memories 🌸✨
       </h2>
-      <div className="columns-2 md:columns-3 gap-4 w-full max-w-5xl mb-20">
+      <div className="columns-1 sm:columns-2 md:columns-3 gap-4 w-full max-w-5xl mb-20">
         {images.map((src, i) => (
           <motion.div
             key={i}
@@ -125,7 +125,7 @@ export default function App() {
             <img
               src={src}
               alt={`gallery-${i}`}
-              className="w-full rounded-2xl shadow-lg border-2 border-purple-300 hover:shadow-[0_0_30px_rgba(255,192,203,0.8)] transition-all duration-300"
+              className="w-full rounded-xl sm:rounded-2xl shadow-lg border border-purple-300 sm:border-2 hover:shadow-[0_0_30px_rgba(255,192,203,0.8)] transition-all duration-300"
             />
           </motion.div>
         ))}
