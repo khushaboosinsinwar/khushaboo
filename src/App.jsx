@@ -26,7 +26,7 @@ export default function App() {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1 }}
-        className="mt-10 mb-15 w-80 h-80 md:w-[450px] md:h-[700px] rounded-2xl overflow-hidden shadow-2xl border-4 border-purple-500"
+        className="mt-10 mb-15 w-80  md:w-[450px]  rounded-2xl overflow-hidden shadow-2xl border-4 border-purple-500"
       >
         <video
           src={birthdayVideo}
@@ -42,6 +42,16 @@ export default function App() {
       <audio autoPlay loop>
         <source src="/music.mp3" type="audio/mpeg" />
       </audio>
+
+
     </div>
   );
 }
+
+
+
+
+
+
+
+
